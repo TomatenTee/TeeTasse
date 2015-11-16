@@ -13,19 +13,20 @@ public class Activity extends Product{
 	public static enum ActivityType { //auch für Kategorien verwenden ?
 		Activity;
 	}
-	private String category, image;
+	private String category, image, description;
 	private ActivityType type;
 
 	@SuppressWarnings({ "unused", "deprecation" })
 	private Activity() {}
 
-	public Activity(String name, String image, Money price, String category, ActivityType type) {
+	public Activity(String name, String image, String description, Money price, String category, ActivityType type) {
 
 		super(name, price);
 
 		this.image = image;
 		this.category = category;
 		this.type = type;
+		this.description = description;
 	}
 
 	public String getCategory() {
@@ -38,5 +39,9 @@ public class Activity extends Product{
 
 	public ActivityType getType() {
 		return type;
+	}
+	
+	public String getDescription() {
+		return description;
 	}
 }

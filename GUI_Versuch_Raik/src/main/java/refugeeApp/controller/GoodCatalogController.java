@@ -3,9 +3,12 @@ package refugeeApp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import refugeeApp.model.Good;
 import refugeeApp.model.Good.GoodType;
 import refugeeApp.model.GoodCatalog;
 
@@ -28,5 +31,13 @@ public class GoodCatalogController {
 		modelMap.addAttribute("goodcatalog", goodCatalog.findByType(GoodType.Good));
 
 		return "goodCatalog";
+	}
+	
+	@RequestMapping("/good/{pid}")
+	public String good(@PathVariable("pid") Good good, Model model) {
+		
+		model.addAttribute("good", good);
+		
+		return "good";
 	}
 }

@@ -44,7 +44,7 @@ public class StartpageController extends RegistrationForm{
 	public String registerNew(@ModelAttribute("registrationForm") @Valid RegistrationForm registrationForm,
 			BindingResult result) {
 
-String refugee = new String("Refugee");
+		String refugee = new String("Refugee");
 		
 		if (result.hasErrors()) {
 			return "startpage";

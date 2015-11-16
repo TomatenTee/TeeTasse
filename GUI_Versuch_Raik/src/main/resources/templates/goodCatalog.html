@@ -9,7 +9,7 @@
 	<header th:include="navigation :: header" ></header>
 	<nav th:include="navigation :: navigation"></nav>
 	
-	<div class="container" style="background-color:#ffcc5c;">
+	<div class="container" style="background-color:#ffeead;">
 	
 	<!--<br></br>
 		<div class="content">
@@ -21,45 +21,28 @@
 						<h4 th:text="#{category} + ${good.category}">Möbel</h4>
 						<img th:src="@{'/resources/img/cover/' + ${good.image} + '.jpg'}" class="thumbnail" src="../resources/img/cover/stuhl.jpg" alt="" />-->
 					 
-					 <div class="container-fluid" style="background-color:#ffeead;">
-					 <h1 th:text="#{heading.goodCatalog}">Güterauswahl</h1>	
-					 <div class="row">
-				
-					 
-					 
-					 
-					 
-					 
+			<div class="container-fluid" style="background-color:#ffeead;">
+				 <h1 th:text="#{heading.goodCatalog}">Güterauswahl</h1>	
+				 <div class="row">	 
 					 <div class="col-xs-4">
-    	
-    		         
-    		    	 <div style="padding-bottom:30px;border:1px black solid"><b>Kategorien und Filter</b>
-    		    	  <div class="list-group">
- 						<a href="#" class="list-group-item activ">Möbel</a>
-  						<a href="#" class="list-group-item">Kleidung</a>
-  						<a href="#" class="list-group-item">Elektronische Geräte</a>
-					  </div>
-    		    	 
-    		    	 
-    		    	 
-    		    	 </div>
-    		         
-    		         
-    		         </div>
-    		         
-    		         
-    		         <div class="col-xs-8" style="height:500px;border:1px black solid "><b>Artikel</b></div>
- 		 			 
-    		         
-    		         
-    		  
- 					 
-			 	
-					
-					
+	    		    	 <div style="padding:5px;border:1px black solid"><b>Kategorien und Filter</b>
+	    		    	 	<div class="list-group">
+	 							<a href="#" class="list-group-item activ">Möbel</a>
+	  							<a href="#" class="list-group-item">Kleidung</a>
+	  							<a href="#" class="list-group-item">Elektronische Geräte</a>
+						  	</div>
+	    		    	 </div>		    		         
+	   		         </div>
+	   		          
+	   		      	<div class="col-xs-8" style="padding:5px;height:500px;border:1px black solid "><b>Artikel</b>
+						<a th:each="good : ${goodcatalog}" th:href="@{'/good/' + ${good.identifier}}" href="good.html">  <!-- th:href="@{'/good/' + ${good.identifier}}" href="good.html" --> 
+							<h4 th:text="${good.name}">Stuhl</h4>
+							<h5 th:text="#{category} + ': ' + ${good.category}">Möbel</h5>
+							<!--  <img th:src="@{'/resources/img/cover/' + ${good.image} + '.jpg'}" class="thumbnail" src="../resources/img/cover/stuhl.jpg" alt="" />-->
+						</a>
 					</div>
-					
-		</div>
+				</div>		
+			</div>
 		</div>
 		
 			

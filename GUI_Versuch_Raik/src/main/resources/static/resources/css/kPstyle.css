@@ -58,6 +58,10 @@ div.salespoint fieldset {
 	text-align: center;
 }*/
 
+h1 {
+	text-color:white;
+}
+
 #welcome_heading{
 	text-align:center;
 }
@@ -123,6 +127,7 @@ table th {
     border: 3px solid #474747;
     height: 50px;
     background: #474747;
+    text-align:center;
 }
 #Logout_Symbol {
 	color: white;

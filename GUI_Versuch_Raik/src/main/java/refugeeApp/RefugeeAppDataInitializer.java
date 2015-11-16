@@ -65,8 +65,8 @@ public class RefugeeAppDataInitializer implements DataInitializer {
 			return;
 		}
 		
-		activityCatalog.save(new Activity("Fußball für Kinder", "fußballkids", Money.of(14.99, EURO), "Kinder", ActivityType.Activity));
-        activityCatalog.save(new Activity("Radfahren durch Dresden", "bike", Money.of(14.99, EURO),"Draußen", ActivityType.Activity));
+		activityCatalog.save(new Activity("Fußball für Kinder", "fußballkids","betreutes Fußball spielen im Freien, Bitte selbst mit Essen und Trinken versorgen, da diese Veranstaltung draußen stattfindet, bitte ich außerdem darauf zu achten, dass die Kinder Kleidung tragen die auch schmutzig werden darf", Money.of(14.99, EURO), "Kinder", ActivityType.Activity));
+        activityCatalog.save(new Activity("Radfahren durch Dresden", "bike", "Treffpunkt:Postplatz, Dauer: ca 2h", Money.of(14.99, EURO),"Draußen", ActivityType.Activity));
 	}
 	
 	private void initializeUsers(UserAccountManager userAccountManager, UserRepository userRepository){
