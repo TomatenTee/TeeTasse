@@ -1,0 +1,62 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:include="navigation :: htmlhead">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/css/kPstyle.css}" />
+		<title th:text="#{home.createGood}">Gut erstellen</title>
+	</head>
+<body class="background" style="background-color:#ffcc5c;">
+	<header th:include="navigation :: header" ></header>
+		<nav th:include="navigation :: navigation" ></nav>
+		<div class="container" style="background-color:#ffcc5c;">
+		<div class="container" style="background-color:#ffeead;">
+		<h1 th:text="#{createGood.title}">Erstellung des Gutes</h1>
+		
+			<div class="row">
+			
+			<div>
+			<div class="col-sm-3">
+			<b>Wählen sie ein Bild des Gutes aus:</b>
+
+			</div>
+			
+			<div class="col-sm-4">
+			
+			<div style="float:left,padding:10px;"><button type="button" class="btn btn-primary btn-sm">Datei auswählen.</button>
+			</div>
+			
+			<div style="font-size:x-small;">JPG, GIF, PNG, JPEG - Maximal 4 MB pro Datei.
+			Bilder bis 8 MB werden komprimiert.</div>
+			
+			</div>
+
+			</div>
+
+			</div>		
+			<div class="row" style="pradding: 10px;">
+			<div>
+			<div class="col-sm-3">
+			
+			<b>Fügen sie eine Beschreibung hinzu:</b>
+			</div>
+			
+			<div class="col-sm-4">
+			
+			<div class="form-group">
+			<textarea class="form-control" rows="5" id="comment"></textarea>
+				</div>
+			<button type="button" class="btn btn-primary">Bestätigen</button>
+			</div>
+			
+			
+			
+			
+			</div>
+			
+			</div>
+			
+			
+		</div>
+</div>
+</body>
+</html>

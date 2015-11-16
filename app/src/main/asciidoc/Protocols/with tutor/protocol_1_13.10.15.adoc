@@ -1,0 +1,41 @@
+= Protokoll Gruppe 36
+
+__Treffen am 13.10.2015__
+
+__Schriftführer:__
+
+__Nächstes Treffen:__ 15.10.2015
+
+__Teilnehmer:__ Nils, Raik, Sandro, Georg, ...
+
+== Bemerkungen
+- Einführung in das Projekt
+- Aufgabenstellung bekommen
+
+
+== Retrospektive des letzten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|…     |…       |…      |…
+|===
+
+
+== Aktueller Stand
+
+
+== Planung des nächsten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[width="10%", option="headers"]
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+|…     |Einführung in Git/GitHub    a|
+* Accout erstellen
+* mit Issues auseinandersetzen
+* Grundbegriffe erlernen wie Pull, Push, Merge etc.. |…                |…
+|===

@@ -1,0 +1,68 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:include="navigation :: htmlhead">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/css/kPstyle.css}" />
+		<title th:text="#{home.myGoods}">Meine Güter</title>
+	</head>
+<body class="background" style="background-color:#ffcc5c;">
+	<header th:include="navigation :: header" ></header>
+		<nav th:include="navigation :: navigation" ></nav>
+		<div class="container" style="background-color:#ffcc5c">
+		<div class="container" style="background-color:#ffeead">
+		<h1 th:text="#{myGoods.title}">Meine Güter</h1>
+	
+	<div class="row">
+	
+	<div>
+	<div class="col-sm-4">
+	
+	
+	<div style="overflow:auto;height:300px;border: 1px black solid">
+	
+	<div class="list-group">
+  	<a href="#" class="list-group-item">Hut</a>
+  	<a href="#" class="list-group-item">T-shirt</a>
+  	<a href="#" class="list-group-item">Hose</a>
+  	<a href="#" class="list-group-item ">Fahrrad</a>
+  	<a href="#" class="list-group-item">Hocker</a>
+  	<a href="#" class="list-group-item">Mikrowelle</a>
+  	<a href="#" class="list-group-item ">Wasserkocher</a>
+  	<a href="#" class="list-group-item">Teddybär</a>
+  	<a href="#" class="list-group-item">Nachtischlampe</a>
+  	<a href="#" class="list-group-item ">Fußball EM Ticket</a>
+  	<a href="#" class="list-group-item">Roller</a>
+  	<a href="#" class="list-group-item">Laptop</a>
+	</div>
+	
+	
+	
+	</div>
+	
+</div>
+	
+	
+	<div class="col-sm-8">Description</div>
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	
+	</div>
+	
+	
+	
+	
+	
+	</div>
+		
+	</div>
+	
+
+	
+</body>
+</html>

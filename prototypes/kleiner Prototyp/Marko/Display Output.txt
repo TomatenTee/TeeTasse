@@ -1,0 +1,35 @@
+Client Libraries for Google Maps Web Services - Introduction
+The Java and Python client libraries for Google Maps Web Services enable you to work with Google Maps Web services on your server.
+
+This example uses the Google Maps Geocoding API.
+Nov 04, 2015 3:46:53 PM com.google.maps.GeoApiContext getWithPath
+INFORMATION: Request: https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCmXe39AZrJtIF2FzhQH-xzu8q2lNFxj_k&address=Rungestra%C3%9Fe+2%2C+Dresden
+  Input:  Rungestraße 2, Dresden
+  Output: Rungestraße 2, 01217 Dresden, Germany
+
+This example uses the Google Maps Distance Matrix API.
+Nov 04, 2015 3:46:54 PM com.google.maps.GeoApiContext getWithPath
+INFORMATION: Request: https://maps.googleapis.com/maps/api/distancematrix/json?key=AIzaSyCmXe39AZrJtIF2FzhQH-xzu8q2lNFxj_k&destinations=N%C3%B6thnitzer+Stra%C3%9Fe+26%2C+Dresden%7CFreiburger+Stra%C3%9Fe+28%2C+Dresden%7CHamburger+Stra%C3%9Fe+1%2C+Dresden%7CTechnische+Universit%C3%A4t%2C+Dresden%7CHaupbahnhof%2C+Dresden%7C01217&origins=N%C3%B6thnitzer+Stra%C3%9Fe+46%2C+Dresden
+  Origin:      Nöthnitzer Str. 46, 01187 Dresden, Germany
+  Destination: Nöthnitzer Str. 26, 01187 Dresden, Germany
+  Distance:    0.7 km
+
+  Origin:      Nöthnitzer Str. 46, 01187 Dresden, Germany
+  Destination: Dresden, Germany
+  Distance:    4.3 km
+
+  Origin:      Nöthnitzer Str. 46, 01187 Dresden, Germany
+  Destination: Hamburger Str. 1, 01067 Dresden, Germany
+  Distance:    5.4 km
+
+  Origin:      Nöthnitzer Str. 46, 01187 Dresden, Germany
+  Destination: Dresden University of Technology, 01069 Dresden, Germany
+  Distance:    0.4 km
+
+  Origin:      Nöthnitzer Str. 46, 01187 Dresden, Germany
+  Destination: Hauptbahnhof, 01069 Dresden, Germany
+  Distance:    4.2 km
+
+  Origin:      Nöthnitzer Str. 46, 01187 Dresden, Germany
+  Destination: 01217 Dresden, Germany
+  Distance:    2.7 km

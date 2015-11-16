@@ -1,0 +1,49 @@
+= Protokoll Gruppe 36
+
+__Treffen am:__ 23.10.2015
+
+__Schriftführer:__ Notizen von Raik
+
+__Nächstes Treffen mit Tutor:__ 30.10.2015
+
+__Teilnehmer:__ Nils, Raik, Sandro, Georg, Marco
+
+== Bemerkungen
+* die ersten 50min den Inhalt der Webseite mit André, die restlichen Minuten mit Justus die Organisation besprochen
+** inhaltliche Themen wurden den https://github.com/st-tu-dresden-2015/swt15w36/blob/master/aufgabenstellung.adoc#konkrete-kriterien[*Muss/Kann Kriterien*] hinzugefügt.
+* Scrum-Master festgelegt -> Georg
+
+
+== Retrospektive des letzten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|https://github.com/st-tu-dresden-2015/swt15w36/milestones[Milestones]     |Meilensteine/Issues erstellen      |erledigt      |Issues sollten weiter mit Unterpunkten hinzugefügt werden, Issues nutzen!
+|http://static.olivergierke.de/lectures/[Seite mit Folien] |Dokumentationen von Oliver Gierke erabeiten |hauptsächlich erledigt |ein paar Probleme treten noch auf bei Raik (STS lässt sich nicht ordnungsgemäß installieren) - am Problem wird gearbeitet
+|===
+
+
+== Aktueller Stand
+Bessere Vorstellung der Akteure und Rollen, genauere Analyse am Montag, im nächsten Treffen der fünf Teammitglieder.
+
+
+== Planung des nächsten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+|https://github.com/st-tu-dresden-2015/swt15w36/issues/2[#2] |Abgabe des http://github.com/st-tu-dresden-2015/swt15w36/blob/master/app/src/main/asciidoc/pflichtenheft.adoc[Pflichtenheftes]   a|die Unterpunkte sind im Issues dargestellt, bitte abhaken, wenn ein neues fertig ist |die gesamte Gruppe |…
+|https://github.com/st-tu-dresden-2015/swt15w36/issues/11[#11] |Diagramme ausarbeiten a|* Kontextdiagramm
+* Top-Level-Architektur
+* Anwendungsfalldiagramm
+* Analyseklassendiagramm
+
+UML Diagramme per asciidoc als Bild ins Pflichtenheft einfügen|die ganze Gruppe, evtl. aufteilen |…
+|https://github.com/st-tu-dresden-2015/swt15w36/issues/1[#1] |kleinen Prototyp ausarbeiten |man nimmt sich ein Schwerpunkt aus der Infrastruktur und bearbeitet diesen entschprechend. Dazu auch per Tests nachweisen, ob dieser funktioniert. |jeder einzelne evtl. zu zweit |…
+|https://github.com/st-tu-dresden-2015/swt15w36/issues/12[#12] |GUI-Prototyp ausarbeiten |eine Übersicht über den Aufbau der Webseite, genauere Beschreibung im Pflichtenheft. Erstellung per HTML und CSS und entsprechenden ausgewählten Framework, eventuell auch Skizzen oder Mockups durch Bildbearbeitungssoftware. |eher als Gruppe |…
+|===

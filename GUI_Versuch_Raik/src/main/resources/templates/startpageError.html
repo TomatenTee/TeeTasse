@@ -1,0 +1,55 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+ 		<!--  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />-->
+ 		<link rel="stylesheet" type="text/css" href="../resources/bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<title th:text="#{startpage.title}">RefugeeApp</title>
+	<style>
+      #collapse1{
+        text-align: center;
+      }
+      #collapse2{
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+      }
+      input.form-control{
+        width: 300px;
+      }
+	  div.big{
+		background-color: #ffcc5c;
+		box-shadow: 2px 2px 2px #888888,
+					 -2px 2px 2px #888888,
+					2px -2px 2px #888888,
+					 -2px -2px 2px #888888;
+	  }
+	  div.wrapper{
+	    min-height: 100vh;
+	 	background: #ffeead;
+
+		/*copy all 3 lines to your parent*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+		select.selectpicker.test{
+		width:300px;
+	}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+	
+    	<div class="big">
+    		Falsches Passwort als Wiederholung!
+    		<div th:include="startpage :: startpage">
+    		</div>
+    	</div>
+</div>
+</body>
+</html>

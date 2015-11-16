@@ -1,0 +1,9 @@
+= Erster GUI Versuch von Raik 
+
+(auf Grundlage von meinem Prototyp)
+
+[%hardbreaks]
+Ein bisschen versucht, was man alles anstellen kann mit Bootstrap.
+Farben/Schrift/Bilder etc. sind nur eine Art Platzhalter, bis die schlussendlichen Besprochen wurden.
+Ein paar Probleme auch bereits festegestellt, dass nicht jedes Symbol angenommen wird in Verbindung mit Thymeleaf/Spring.
+Weiterer Punkt: Spring braucht XHTML oder jeden tag schließen! -> z.b <input [...] />  || <input>...</input>

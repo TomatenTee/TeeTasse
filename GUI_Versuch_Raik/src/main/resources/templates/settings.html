@@ -1,0 +1,17 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:include="navigation :: htmlhead">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/css/kPstyle.css}" />
+		<title th:text="#{home.settings}">Einstellungen</title>
+	</head>
+<body class="background">
+	<header th:include="navigation :: header" ></header>
+		<nav th:include="navigation :: navigation" ></nav>
+		<div class="container">
+		<h1 th:text="#{settings.title}">Einstellungen</h1>
+		
+			<p>Hier können sie ihre Einstellungen treffen!</p>
+		</div>
+</body>
+</html>

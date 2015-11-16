@@ -1,0 +1,43 @@
+﻿= Protokoll Gruppe 36
+
+__Treffen am:__ 02.11.2015
+
+__Schriftführer:__ Notizen von Marco
+
+__Nächstes Treffen mit Tutor:__ 06.11.2015
+
+__Teilnehmer:__ Nils, Raik, Sandro, Georg, Marco 
+
+== Bemerkungen
+* Organisation geklärt
+** Fortschritt der Prototypen
+** Pflichtenheft ausgebessert
+** Großen Protypen besprochen sowie die nächsten Aufgaben https://github.com/st-tu-dresden-2015/swt15w36/issues/15[#15]
+
+
+== Retrospektive des letzten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|…     |…       |…      |…
+|===
+
+
+
+== Aktueller Stand
+ 
+
+== Planung des nächsten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|…     |…       |…      |…
+|===
+

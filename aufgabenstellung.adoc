@@ -1,0 +1,170 @@
+= Aufgabenstellung
+
+== Ursprünglicher Aufgabentext
+
+Im Rahmen der aktuellen Flüchtlingssituation kann man sich Gedanken machen, wie man diesen vielen Menschen helfen könnte, welche mit rein gar nichts außer den Sachen am eigenen Leibe bei uns ankommen. Wir leben in einer Überflussgesellschaft und ein jeder hat viele Sachen und Dinge, die leicht zu entbehren sind, da diese schon seit Ewigkeiten im Keller oder Boden stehen, welche jedoch den Menschen hier ein menschenwürdiges Leben ermöglichen würden - angefangen von Anzieh- und Spielsachen für Kinder bis hin zu alten Fahrrädern zur Fortbewegung etc.
+
+Natürlich gibt es bereits viele Hilfsorganisationen, welche Hilfsgüter/Sachspenden sammeln und anschließend verteilen, die man hierfür in Anspruch nehmen kann, allerdings wollen auch viele Menschen einfach direkt selbst helfen, entweder einfach nur in dem man die Hilfsgüter bereitstellt/anbietet oder aber vielleicht auch durch Freizeitangebote um Integrationsmöglichkeiten zu schaffen.
+
+Hierbei scheitert es jedoch oft an den Fremdsprachenkenntnisse der Beteiligten und an einer geeigneten Plattform, um überhaupt erst in Kontakt treten zu können. Was uns daher vorschwebt ist eine Art eBay-Kleinanzeigen Portal allerdings multi-lingual - ein Art Welcome- Refugee - Portal, wo Menschen mittels einer Textbaustein-dialog-prinzip und mit Unterstützung von Google Translate in der eigenen Landsprache mit Menschen jeglicher Nationen einfach und unkompliziert in Kontakt treten können, damit so einfach Dinge schnell und unkompliziert direkt ohne Umwege über Sammellager von DRK etc. den Weg zu Bedürftigen finden können. Die Plattform soll aber nicht nur ausschließlich dem Austausch von Gegenständen dienen, sondern auch die Möglichkeit bieten, Angebote zur schnellen Integration der Flüchtlingen bei uns anzubieten z.B. durch das Annoncieren von Deutschkursen etc.
+
+
+== Zusätzliche Überlegungen
+
+=== Startseite:
+* Logo: TBD
+* E-Mail & Kennwort für Login
+* Neuanmeldung mit E-Mail Bestätigung Button
+* Kennwort vergessen via E-Mail Kennwort-reset-link mit Verfallsdatum Button
+
+[[neuanmeldung]]
+=== Neuanmeldung (Schritt)
+* Vorname, Name
+* E-Mail
+* Derzeitige Unterkunft =
++
+Flüchtling:: Stadtteil/Plz
+Helfender:: Adresse
+* Herkunft
+* Sprache (Mehrfachauswahl + Präferenz/Ranking)
+* ReCaptcha2 für Botdetection
+
+=== Startseite (nach Login):
+
+* Hilfsgüter/Goods Button
+* Angebote/Activities Button
+* Account management
+
+[[goods]]
+=== Goods (ähnlich wie bei eBay-Kleinanzeigen)
+* Suchfeld + Kategorie Dropdown
+* Umkreis von [in km]
+* Angebot einstellen Button
+
+[[anzeige]]
+=== Anzeige (Goods & Activities)
+* Photo (nur bei Goods zweckmäßig)
+* Anbieter, Plz + Ort
+* Einstellungsdatum
+
+[[attributliste]]
+* Attributelist / Tags zu Größe etc.
+** Logisch geordnet: z.B Größen (S, XS, XXL oder “für Kinder geeignet”), Farben (grün etc.), Mengen etc.
+** Vorgegeben (drop-down oder auto-complete-select) mit passenden Übersetzungen.
+* Freitext beschreibung
+* Kontaktaufnahme Button
+
+* Anzeigen löschen/herausnehmen [durch Einsteller + Admin]
+* Anzeigen automatisch löschen/herausnehmen nach optionalen Verfallsdatum
+
+=== Kontaktaufnahme/Dialog
+* Icons/Text eigene Sprache und vom Gegenüber
+* Textbaustein-basierend:
+** Textbausteine logisch nach Art der Konversation geordnet z.B. “Begrüßung”, oder “Termin zur Abholung ausmachen” enthält Textbausteine wie “Ich würde gern den Gegenstand am XX” abholen mit XX verschiedenen Option wie Tag + Uhrzeit + Treffpunkt (open streetmap pop-out?).
+** Alternativ auch Freitext eingabe mit Möglichkeit der Übersetzung durch GoogleTranslate (integriert)
+* Anzeige von vorherigen Gesprächsverlauf ähnlich wie bei Whatsapp u.a. etc.
+
+
+=== Technologien:
+* Bootstrap, Foundation o.ä. Framework für Desktop und Mobile Unterstützung
+* Thymleaf für Templates
+* Spring, Spring+Data mit MySQL Backend, Spring+Security für verschiedene Rollen
+* EclipseLink JPA
+* Lombok
+* ReCaptcha2
+* Log4J
+* Java-Class basierende Konfiguration
+* Maven
+* Git/GitHub
+
+
+== Konkrete Kriterien
+
+=== Notwendige "muss" Kriterien
+
+==== <<neuanmeldung,Nutzermanagement>>
+
+* Erstellen
+* Löschen
+* Modifizieren
+** User sich selbst
+** Admin role alle
+
+* Rollen
++
+Mindestens User und Admin
+
+==== Kategorien
+
+* <<anzeige,Einteilung>> / Tagging der Güter & Activities
+* Vordefinierte Liste an Kategorien
+
+==== <<goods,Item Management>> (Goods & Services)
+
+User mit Zugriff auf eigene + Admin auf alle
+
+* Erstellen
+* Löschen
+* Bearbeiten
+
+==== Dialoge
+
+* Tracking von Dialog Fortschritt
+* Dialogbausteine
+* Priorisierung (Antworten auf zuletzt gewählte Bausteine zuerst)
+* Dynamische Verknüpfungen der Bausteine (Mit verschiedenen entry points je nach Kontext)
+* Modifikation via JSON upload (nicht zwingend notwendig, wenn per GUI implementiert, könnte aber für die GUI das backend sein)
+
+==== Struktur
+
+* Goods
+** Übersicht
+** Suche
+** Abhängig von der Distanz (erwünschte Maximaldistanz sollte einstellbar sein)
+** Anzeige
+*** Foto hochladen
+*** <<attributliste,Vordefinierte Attributliste>>
+* Activities
+** Übersicht
+** Suche
+** Anzeige
+* Mehrsprachiges interface
+
+=== Erwünschte "kann" Kriterien
+
+==== Kategorien
+
+* Erstellen neuer Kategorien
+* Löschen
+* Bearbeiten
+
+==== Dialog Management
+
+* Neue Satzfragmente erstellen (GUI)
+* Satzfragmente bearbeiten (GUI)
+* Vorschläge und Zusammenhänge modifizieren (GUI)
+
+==== Dialog
+
+* Preference based sorting
+* Tagging und Kategorisierung
+* Chatsystem
+
+==== Struktur
+
+* Activities
+** Auflösung/Schließen von activity nach Datum
+** Periodische Wiederholung
+* Editierbare Übersetzung des Interfaces
+* "Suche folgenden Gegenstand" (Gegenteil des Angebot Inserierens)
+
+==== Security
+
+* Feedback zu Nutzern
+** Report-System (für unerwünschtes Verhalten)
+*** Vulgarität
+*** Weiterverkauf für Geld
+** Bewertungs-System
+*** Hat der Käufer/Verkäufer gemacht was er versprochen hat?
+* Aktivitäten Statistik
+* Wegwerf E-Mail Addressen Blacklisten

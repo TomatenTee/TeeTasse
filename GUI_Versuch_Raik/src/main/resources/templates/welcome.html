@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="../resources/bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../resources/css/kPstyle.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<title th:text="#{home.title}">Welcome</title>
+		<style>
+		a.center-block.btn.btn-default.btn-lg.welcome {
+			background-color: #ffcc5c;
+			padding: 20px;
+			margin: 5px;
+			width: 250px;
+			color: black;
+			text-align:center;
+			align: center;
+
+		}
+		body.background.welcome {
+			background-color: #ffeead;
+		}
+		</style>
+	</head>
+
+<body class="background welcome">
+<header th:include="navigation :: header" ></header>
+<nav th:include="navigation :: navigation" ></nav>
+	<div class="container">
+		<h1 id="welcome_heading" th:text="#{heading.home}">Welcome</h1>
+		<div align="center">
+			<a sec:authorize="hasRole('ROLE_REFUGEE')" class="center-block btn btn-default btn-lg welcome" role="button" th:href="@{/goodCatalog}" href="goodCatalog.html" th:text="#{nav.goodCatalog}">Gut auswählen</a><br />
+			<a sec:authorize="hasRole('ROLE_ADMIN')" class="center-block btn btn-default btn-lg welcome" role="button" th:href="@{/goodCatalog}" href="goodCatalog.html" th:text="#{nav.goodCatalog}">Gut auswählen</a><br />
+			<a sec:authorize="hasRole('ROLE_ADMIN')" class="center-block btn btn-default btn-lg welcome" role="button" th:href="@{/createGood}" href="createGood.html" th:text="#{nav.createGood}">Gut erstellen</a><br />
+			<a sec:authorize="hasRole('ROLE_SUPPORTER')" class="center-block btn btn-default btn-lg welcome" role="button"  th:href="@{/createGood}" href="createGood.html" th:text="#{nav.createGood}">Gut erstellen</a><br />
+			<a sec:authorize="isAuthenticated()" class="center-block btn btn-default btn-lg welcome" role="button" th:href="@{/createActivity}" href="createActivity.html" th:text="#{nav.createActivity}">Aktivität erstellen</a><br />
+			<a sec:authorize="isAuthenticated()" class="center-block btn btn-default btn-lg welcome" role="button" th:href="@{/activityCatalog}" href="activityCatalog.html" th:text="#{nav.activityCatalog}">Aktivität auswählen</a><br />
+			<p sec:authorize="isAuthenticated()" th:text="${'Hallo ' + #authentication?.name}">Hallo Nutzer</p>
+			<p th:text="#{home.welcome}">Willkommen zur Refugee-App.</p>
+		</div>
+	</div>
+</body>
+</html>

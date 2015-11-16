@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="de">
+
+	<head th:fragment="htmlhead">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+ 		<!--  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />-->
+ 		<link rel="stylesheet" type="text/css" href="../resources/bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<title th:text="#{startpage.title}">RefugeeApp</title>
+    <style>
+      #collapse1{
+        text-align: center;
+      }
+      #collapse2{
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+      }
+      input.form-control{
+        width: 300px;
+      }
+	  div.big{
+		background-color: #ffcc5c;
+		box-shadow: 2px 2px 2px #888888,
+					 -2px 2px 2px #888888,
+					2px -2px 2px #888888,
+					 -2px -2px 2px #888888;
+	  }
+	  div.wrapper{
+	    min-height: 100vh;
+	 	background: #ffeead;
+
+		/*copy all 3 lines to your parent*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+		select.selectpicker.test{
+		width:300px;
+	}
+    </style>
+
+</head>
+  <body>
+  
+	<div class="wrapper">
+	
+    	<div class="big">
+    	<div th:fragment="startpage">
+      		<noscript>
+        		<div style="position:absolute; z-index:100; top:0px; left:0px; width:100%; height:50px">
+          			Um diese Seite in vollem Umfang nutzen zu können muss Javascript aktiviert sein!
+        		</div>
+      		</noscript>
+      		<h2 sec:authorize="isAuthenticated()">Sie sind angemeldet</h2>
+      		<h2 th:text="#{startpage.title}">RefugeeApp</h2>
+      		<p>Sie sind ein Refugee oder wollen jenen helfen? Sie brauchen alltägliche Gegenstände für ihre neue Wohnung oder für ihre Familie? Oder Sie wollen ihre nicht genutzen Gegenstände an jemanden verteilen, der sich dringend benötigt?</p>
+      		<p>Dann sind sie hier ganz richtig! Diese Webseite stellt ein Non-Profit-Markt zur Verfügung, auf dem Güter sowie Aktivitäten angeboten werden von Unterstützern. Refugees können dann Anfragen stellen, an Interesse an einem Gut oder Aktivität.</p>
+      		<p>Die Kommunikation erfolgt dann automatisch in der jeweiligen Sprache!</p>
+      		<div class="panel-group" id="accordion">
+        		<div class="panel panel-default">
+          			<div class="panel-heading">
+            			<h4 class="panel-title">
+              				<a class="login" data-toggle="collapse" data-parent="#accordion" href="#collapse1" ><b class="glyphicon glyphicon-log-in"></b><span th:text="' '+ #{login.tilte}"> Login</span></a>
+            			</h4>
+         			</div>
+          			<div id="collapse1" class="panel-collapse collapse in">
+						<div class="content">
+        	        		<p th:if="${startpageError}">Wrong user or password</p>
+        	        		<form th:action="@{/startpage}" method="post">
+        	        		<fieldset>
+                      			<input type="text" class="center-block form-control"  name="username" required="required" th:placeholder="#{login.username}" autofocus="autofocus" />
+                      			<br />
+                      			<input type="password" class="center-block form-control"  name="password" required="required" th:placeholder="#{login.password}" />
+                      			<br />
+                      			<div class="form-actions">
+        	           			<button type="submit" class="btn btn-default" value="Log in"><b th:text="#{login.submit}"></b></button>
+        	        			</div>
+        	        			</fieldset>
+        	        		</form>
+                		</div>
+        			</div>
+        		</div>
+        		<div class="panel panel-default">
+          			<div class="panel-heading">
+            			<h4 class="panel-title">
+              				<a class="register" data-toggle="collapse" data-parent="#accordion" href="#collapse2" ><b class="glyphicon glyphicon-user"></b><span th:text="' '+ #{register.title}"> Registrierung</span></a>
+
+            			</h4>
+          			</div>
+          			<div id="collapse2" class="panel-collapse collapse">
+							<div class="salespoint">
+        						<form method="post" action="/registerNew" th:object="${registrationForm}">
+									<fieldset>
+										<div th:if="${#fields.hasErrors('*')}">
+	        								<p>Einige Angaben sind nicht korrekt.</p>
+	        							</div>
+										<input class="center-block form-control" id="username" th:field="*{username}" th:errorclass="fieldError" type="text" required="required" name="username" th:placeholder="#{register.username}" />
+	        							<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Der Username darf nicht leer sein.</p>
+										<br />
+										<input class="center-block form-control" id="email" th:field="*{email}" th:errorclass="fieldError" type="email" name="email" required="required" th:placeholder="#{register.email}" />
+										<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Der Username darf nicht leer sein.</p>
+										<br />
+	                    				<input class="center-block form-control" id="forename" th:field="*{forename}" th:errorclass="fieldError" type="text" name="forename" required="required" th:placeholder="#{register.forename}" />
+	                    				<p th:if="${#fields.hasErrors('forename')}" th:errors="*{forename}">Der Vorname darf nicht leer sein.</p>
+	                    				<br />
+	                    				<input class="center-block form-control" id="name" th:field="*{name}" th:errorclass="fieldError" type="text" name="name" required="required" th:placeholder="#{register.name}" />
+	                    				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Der Nachname darf nicht leer sein.</p>
+	                    				<br />
+	                    				<input class="center-block form-control" id="postcode" th:field="*{postcode}" th:errorclass="fieldError" type="text" name="postcode" required="required" th:placeholder="#{register.postcode}" maxlength="5" />
+	                    				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Die Postleitzahl darf nicht leer sein.</p>
+	                    				<br />
+
+
+	                    				<input class="center-block form-control" id="address" th:field="*{address}" th:errorclass="fieldError" type="text" name="address" required="required" th:placeholder="#{register.address}" />
+	                    				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Die Adresse darf nicht leer sein.</p>
+	                    				<br />
+
+	        							<input class="center-block form-control" id="password" th:field="*{password}" th:errorclass="fieldError" type="password" name="password" required="required" th:placeholder="#{register.password}" />
+	        							<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Das Passwort darf nicht leer sein.</p>
+	        							<br />
+
+	                    				<input class="center-block form-control" id="passwordwdh" th:field="*{passwordwdh}" th:errorclass="fieldError" type="password" name="password" required="required" th:placeholder="#{register.passwordrepeat}" />
+	                    				<p th:if="${#fields.hasErrors('passwordwdh')}" th:errors="*{passwordwdh}">Die Passwortwiederholung darf nicht leer sein.</p>
+	                    				<br />
+
+      									<select class="selectpicker test" id="role" th:field="*{role}" name="role">
+		          							<option value="Refugee">Refugee</option>
+		          							<option value="Supporter">Supporter</option>
+		      							</select>
+      									<br />
+												<br />
+
+	        							<!-- <input class="center-block form-control" id="role" th:field="*{role}" th:errorclass="fieldError" type="text" name="role" required="required" />
+	        							<p th:if="${#fields.hasErrors('role')}" th:errors="*{role}">Die Rolle darf nicht leer sein.</p>
+										<br />-->
+
+                    					<button type="submit" class="btn btn-default" value="Registrieren"><b th:text="#{register.submit}"></b></button>
+        							</fieldset>
+        						</form>
+							</div>
+        			</div>
+          		</div>
+        	</div>
+        </div>
+      	</div>
+    </div>
+</body>
+</html>

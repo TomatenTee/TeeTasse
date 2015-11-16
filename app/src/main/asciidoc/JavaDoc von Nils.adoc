@@ -1,0 +1,114 @@
+= JavaDoc
+
+Javadoc erhält beim Aufruf Optionen mit Angaben über die zu dokumentierenden Java-
+Quelltexte. Javadoc parst die Quelltexte nach allen Javadoc-Kommentaren (beginnend
+mit [blue]#/**#) und den darauf folgenden, nicht-lokalen Symbolen. Jeder Javadoc-Kommentar
+wird nach darin enthaltenen Javadoc-Tags (beginnend mit [blue]#@# oder [blue]#{@#) gescannt. Diese
+enthalten Metadaten mit dokumentativem Charakter über das jeweilige Symbol. Mit
+Hilfe sogenannter Taglets kann der bestehende Tag-Wortschatz von Javadoc erweitert werden.
+Das Doclet erzeugt anschließend die Ausgabe. Das Standard-Doclet erzeugt eine Ausgabe in HTML. +
+
+
+
+
+== Übersicht der JavaDoc-Tags
+
+[options="header,footer"]
+|=======================
+| Tag & Parameter |Ausgabe | Verwendung in
+|[red]#@author# name| Beschreibt den Autor.| Klasse, Interface
+|[red]#@version# version|Erzeugt einen Versionseintrag. Maximal einmal pro Klasse oder Interface.|Klasse, Interface
+|[red]#@since# jdk-version| Seitwann die Funktion existiert.| Klasse, Interface, Instanzvariable, Methode
+|[red]#@see# reference|Erzeugt einen Link auf ein anderes Element der Dokumentation.|Klasse, Interface, Instanzvariable, Methode
+|[red]#@serial#|Bei einem [red]#Serializeable Objekt# beschreibt es die serialisierten Daten des Objekts.|Klasse
+|[red]#@serialFlield#|Dokumentiert ein Feld von einem Serializable Objekt.|Klasse,Methode
+|[red]#@param# name description |	Parameterbeschreibung einer Methode.| Methode
+|[red]#@return# descritpion|Beschreibung des Returnwerts einer Methode.| Methode
+|[red]#@exception# classname description  +
+[red]#@throws# classname description|Beschreibung einer Exception, die von dieser Methode geworfen werden kann.|Methode
+|[red]#@deprecated# description|Beschreibt eine veraltete Methode, die nicht mehr verwendet werden sollte. Sollte ab Java 5.0 immer mit der [red]#@deprecated#-Annotation verwendet werden.|Methode
+|[red]#{@inheritDoc}#|	Kopiert die Beschreibung aus der überschriebenen Methode.|Überschreibende Methode
+|[red]#{@link reference}#|Link zu einem anderen Symbol.|Klasse, Interface, Instanzvariable, Methode
+|[red]#{@linkPlain reference}#|Der Link wird in Standardtext statt in Quelltextzeichensatz angezeigt.|Klasse, Interface, Instanzvariable, Methode
+|[red]#{@value}#|Gibt den Wert eines konstanten Feldes zurück.|Statisches Feld
+|[red]#{@docRoot}#|Gibt den absoluten Pfad zum Hauptverzeichnis wieder.|Package,Klassen,Felder,Methoden
+|[red]#{@code}#|Formatiert Text buchstabengetreu mit dem Quelltextzeichensatz (entsprechend <code>) und unterdrückt die Interpretierung von beinhalteten HTML oder Javadoc-Tags.|Klasse, Interface, Instanzvariable, Methode
+|[red]#{@literal}#|Kennzeichnet buchstabengetreuen Text und unterdrückt die Interpretierung von beinhalteten HTML oder Javadoc-Tags.|Klasse, Interface, Instanzvariable, Methode|
+|=======================
+
+== Code Beispiel
+[source,java]
+----
+ // Vor jeder Klasse steht ein Kommentar, welcher den Sinn und Zweck
+ // der Klasse beschreibt. Sie könen in jeden Kommentar auch
+ // HTML-Befehle einf¨ugen.
+
+ /** Diese Klasse demonstriert, wie man Klassen dokumentieren
+ * sollte.
+ *
+ * Hier ein paar Beispiele f¨ur HTML--Befehle: Zum Beispiel wird das
+ * nächste Wort <b>fett</b> geschrieben, und jetzt folgt ein
+ * Absatz.<p>
+ *
+ */
+ public class DemoDoc {
+
+ // Auch die in der Klasse definierten Variablen sollten mit einem
+ // Javadoc--Kommentar versehen werden:
+ //
+
+ /** Diese Instanzvariablen haben keinen besonderen Zweck
+ */
+ int i;
+ String name;
+
+ /** Diese Klassenvariablen haben keinen besonderen Zweck
+ */
+ static int a;
+ static double b;
+
+
+ // Und natürlich beschreibt man jede in einer Klasse definierte Methode.
+ // Auch die Parameter der Methode beschreibt man einzeln, indem man
+ // in den Kommentar einen @param-Befehl einsetzt.
+
+
+ /** Die Methode addiert zu allen Werten eines Arrays den
+ * angegebenen Wert.
+ *
+ * @param arr Die Werte dieses Arrays werden ver¨andert.
+ * @param wert Dieser Wert wird zu den ’arr’-Elementen addiert.
+ */
+ static void addToArray( int[] arr, int wert ) {
+ for(int i=0; i < arr.length; i++) {
+ arr[i]+=wert;
+        }
+    }
+
+ /** Das Hauptprogramm */
+ static public void main( String[] args ) {
+ int[] myArr = {1,2,3};
+ addToArray( myArr, 5 );
+    }
+ }
+
+----
+
+
+== JavaDoc in IDE erzeugen
+
+=== Eclips
+Pfad:  'Project/Generate JavaDoc'
+
+=== NetBeans
+Pfad: 'Run/Generate JavaDoc'
+
+=== IntelliJ
+Pfad: 'Tools/Generate JavaDoc'
+
+== Quellen
+* http://powerman.name/doc/asciidoc
+* http://www.java-doc.de/
+* http://www.wire.tu-bs.de/lehre/eip_static/eiptext/kap13.pdf
+
+(C)Nils Ostwald 2015

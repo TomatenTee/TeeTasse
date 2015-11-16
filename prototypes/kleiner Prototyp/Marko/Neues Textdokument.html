@@ -1,0 +1,27 @@
+<?php
+
+	$distance = 0;
+	$start_adresse = $_POST['start'];
+	$ziel_adresse = $_POST['ziel'];
+
+	if($start_adresse!='' && $ziel_adresse!=''){
+		$url="http://maps.googleapis.com/maps/api/distancematrix/xml?origins=".$start_adresse."+DE&destinations=".$ziel_adresse."+DE&mode=driving&language=de-DE&sensor=false";
+		if($xml=simplexml_load_file($url)){
+		        if($xml->status=='OK'){
+				$distance = $xml->row->element->distance->text;
+				echo 'Die Entfernung zwischen ' . $start_adresse . ' und '.$ziel_adresse . ' beträgt: ' .$distance;
+			}
+		}
+	}
+	else{
+		echo '<form action="Neues Textdokument.php" method="post">
+		<label>Start:</label><br>
+		<input type="text" name="start" value="Startadresse">
+		<br>
+		<label>Ziel:</label><br>
+		<input type="text" name="ziel" value="Zieladresse">
+		<br>
+		<input type="submit" value="Berechnen">
+		</form>';
+	}
+?>

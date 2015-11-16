@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:include="navigation :: htmlhead">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/css/kPstyle.css}" />
+		<title th:text="#{home.activityCatalog}">Aktivitätenauswahl-RefugeeApp</title>
+	</head>
+<body class="background">
+	<header th:include="navigation :: header" ></header>
+	<nav th:include="navigation :: navigation"></nav>
+	<div class="container">
+		<div id="selector">
+	    	<form class="selector_level">
+	      		<div class="checkbox" data-toggle="collapse" data-target="#demo">
+	        		<label class="selector_level"><input type="checkbox" />Option 1</label>
+	      		</div>
+	      		<div class="collapse" id="demo">
+	        		<div class="checkbox" data-toggle="collapse" data-target="#demo2">
+	          			<label class="selector_level"><input type="checkbox" />Option 2</label>
+	        		</div>
+	      		</div>
+	      		<div class="collapse" id="demo2">
+	        		<div class="checkbox">
+	          			<label class="selector_level"><input type="checkbox" />Option 3</label>
+	        		</div>
+	      		</div>
+	        	<div class="checkbox">
+	          		<label class="selector_level"><input type="checkbox" />Option 4</label>
+	        	</div>
+	      	</form>
+	    </div>
+    
+		<div class="article">
+		<h1 th:text="#{heading.activityCatalog}">Aktivitätenauswahl</h1>
+		<br></br>
+			<div id="article">
+				<div class="catalog" th:remove="all-but-first">
+	
+					<a th:each="activity : ${activitycatalog}">
+						<div class="activity">
+							<h3 th:text="${activity.name}">Fußball</h3>
+							<h4 th:text="#{category} + ${activity.category}">Draußen</h4>
+							<img id="img_article" th:src="@{'/resources/img/' + ${activity.image} + '.png'}" class="thumbnail" src="../resources/img/cover/fußballkids.png" width="302" height="180" alt="" />
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

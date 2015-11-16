@@ -1,0 +1,68 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:include="navigation :: htmlhead">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/css/kPstyle.css}" />
+		<title th:text="#{home.goodCatalog}">Güternauswahl-RefugeeApp</title>
+	</head>
+<body class="background" style="background-color:#ffcc5c;">
+	<header th:include="navigation :: header" ></header>
+	<nav th:include="navigation :: navigation"></nav>
+	
+	<div class="container" style="background-color:#ffcc5c;">
+	
+	<!--<br></br>
+		<div class="content">
+			<div class="catalog" th:remove="all-but-first">
+
+				<a th:each="good : ${goodcatalog}">
+					<div class="good">  
+						<h4 th:text="${good.name}">Stuhl</h4>
+						<h4 th:text="#{category} + ${good.category}">Möbel</h4>
+						<img th:src="@{'/resources/img/cover/' + ${good.image} + '.jpg'}" class="thumbnail" src="../resources/img/cover/stuhl.jpg" alt="" />-->
+					 
+					 <div class="container-fluid" style="background-color:#ffeead;">
+					 <h1 th:text="#{heading.goodCatalog}">Güterauswahl</h1>	
+					 <div class="row">
+				
+					 
+					 
+					 
+					 
+					 
+					 <div class="col-xs-4">
+    	
+    		         
+    		    	 <div style="padding-bottom:30px;border:1px black solid"><b>Kategorien und Filter</b>
+    		    	  <div class="list-group">
+ 						<a href="#" class="list-group-item activ">Möbel</a>
+  						<a href="#" class="list-group-item">Kleidung</a>
+  						<a href="#" class="list-group-item">Elektronische Geräte</a>
+					  </div>
+    		    	 
+    		    	 
+    		    	 
+    		    	 </div>
+    		         
+    		         
+    		         </div>
+    		         
+    		         
+    		         <div class="col-xs-8" style="height:500px;border:1px black solid "><b>Artikel</b></div>
+ 		 			 
+    		         
+    		         
+    		  
+ 					 
+			 	
+					
+					
+					</div>
+					
+		</div>
+		</div>
+		
+			
+	
+</body>
+</html>

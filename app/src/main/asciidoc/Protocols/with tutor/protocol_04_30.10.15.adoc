@@ -1,0 +1,52 @@
+﻿= Protokoll Gruppe 36
+
+__Treffen am:__ 30.10.2015
+
+__Schriftführer:__ Notizen von Marko
+
+__Nächstes Treffen mit Tutor:__ 07.11.2015
+
+__Teilnehmer:__ Raik, Sandro, Georg, Marko 
+
+== Bemerkungen
+* Zusammenfassung Wochenfortschritt
+** Pflichtenheft
+** UML Diagramme
+** Themenliste Pflichtenheft
+* Terminbesprechung
+** Nils hat sich für dieses Trefen abgemeldet
+** Andree ist in Amerika
+* Gesprächsthemen
+** Google Translate nicht Kostenfrei
+** Translate nur als leere Funktion
+** Salespoint wird von uns nicht verwendet
+** Spring und Mova
+** GUI Konzept mit Tymeleave und Template
+** Java Doc Verwendung
+** Klassendiagramm und Top level Architektur
+
+
+== Retrospektive des letzten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Aufgabe |Status |Bemerkung
+|...   |...     |...    |...
+|===
+
+
+== Aktueller Stand
+Ausarbeiten des Pflichtenheft und ausarbeitung der kleinen Prototype  
+ 
+
+== Planung des nächsten Sprints
+*Issue referenziert die Issue ID von GitHub*
+
+// See http://asciidoctor.org/docs/user-manual/=tables
+[option="headers"]
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+|...   |...   |...          |...              |...
+|===

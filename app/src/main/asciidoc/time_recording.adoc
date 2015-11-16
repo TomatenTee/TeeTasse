@@ -1,0 +1,36 @@
+= Zeiterfassung für Gruppe 36
+
+Notieren Sie die Zeit in Minuten für jeden Entwickler und für Team-Treffen pro Woche.
+Die verwendete Zeit beinhaltet auch das Lesen von Dokumentationen, Besprechungen mit Teamkollegen und sonstige auf das Praktikum bezogene Aufgaben.
+
+_(Zeitangaben in Stunden)_
+// See http://asciidoctor.org/docs/user-manual/#tables
+
+Tablle 1 (Team-Treffen)
+[options="header"]
+|=======
+|Von    |Bis   |Sandro      |Marko        |Nils         |Raik         |Georg        |Meeting   
+|13.10  |18.10 |3,0/1,5     |3,0/1,5      |3,0/1,5      |3,0/1,5      |3,0/1,5      |13.10/15.10
+|19.10  |25.10 |1,5/1,5/1,5 |1,5/1,5/1,5  |1,5/1.5/1,5  |1,5/1,5/1,5  |1,5/1,5/1,5  |19.10/20.10/23.10
+|26.10  |01.11 |1,5/3,0/2,5 |1,5/3,0/2,5  |1,5/3,0/2,5  |1,5/3,0/2,5  |1,5/3,0/2,5  |26.10/27.10/30.10
+|02.11  |08.11 |1,5/0,0/2,5 |3,0/1,5/2,5  |1,5/1,5/2,5  |3,0/1,5/2,5  |3,0/1,5/2,5  |02.11/03.11/06.11
+|09.11  |15.11 |3,0         |3,0          |3,0          |3,0          |3,0          |09.11
+|=======
+
+'''
+Tablle 2 (eigentständig)
+[options="header"]
+|=======
+|Von    |Bis   |Sandro  |Marko  |Nils |Raik |Georg 
+|13.10  |18.10 |8       |8      |8    |9    |8
+|19.10  |25.10 |8       |8      |8    |9,5  |8
+|26.10  |01.11 |8       |8      |8    |13   |8 
+|02.11  |08.11 |8       |8      |8    |8    |8
+|09.11  |15.11 |8       |8      |8    |8    |8  
+|16.11  |22.11 |...    |...  |...  |...  |...  
+|23.11  |29.11 |...    |...  |...  |...  |...  
+
+|=======
+
+
+
