@@ -3,9 +3,12 @@ package refugeeApp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import refugeeApp.model.Activity;
 import refugeeApp.model.Activity.ActivityType;
 import refugeeApp.model.ActivityCatalog;
 
@@ -28,4 +31,22 @@ public class ActivityCatalogController {
 
 		return "activityCatalog";
 	}
+	
+	@RequestMapping("/activity/{pid}")
+	public String activity(@PathVariable("pid") Activity activity, Model model) {
+		
+		model.addAttribute("activity", activity);
+		
+		return "activity";
+	}
+	
+	@RequestMapping("/activity/delete/{pid}")
+	public String activitydelete(@PathVariable("pid") Activity activity, Model model) {
+		
+		activityCatalog.delete(activity.getId());
+		
+		
+		return "redirect:/activityCatalog";
+	}
+	
 }

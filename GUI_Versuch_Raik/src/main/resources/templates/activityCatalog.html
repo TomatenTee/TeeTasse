@@ -9,7 +9,7 @@
 	<header th:include="navigation :: header" ></header>
 	<nav th:include="navigation :: navigation"></nav>
 	<div class="container">
-		<div id="selector">
+<!-- 		<div id="selector">
 	    	<form class="selector_level">
 	      		<div class="checkbox" data-toggle="collapse" data-target="#demo">
 	        		<label class="selector_level"><input type="checkbox" />Option 1</label>
@@ -28,7 +28,7 @@
 	          		<label class="selector_level"><input type="checkbox" />Option 4</label>
 	        	</div>
 	      	</form>
-	    </div>
+		   </div> -->
     
 		<div class="article">
 		<h1 th:text="#{heading.activityCatalog}">Aktivitätenauswahl</h1>
@@ -36,11 +36,21 @@
 			<div id="article">
 				<div class="catalog" th:remove="all-but-first">
 	
-					<a th:each="activity : ${activitycatalog}">
+					<a th:each="activity : ${activitycatalog}" th:href="@{'/activity/' + ${activity.identifier}}" href="activity.html">
 						<div class="activity">
-							<h3 th:text="${activity.name}">Fußball</h3>
-							<h4 th:text="#{category} + ${activity.category}">Draußen</h4>
-							<img id="img_article" th:src="@{'/resources/img/' + ${activity.image} + '.png'}" class="thumbnail" src="../resources/img/cover/fußballkids.png" width="302" height="180" alt="" />
+						
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-4">
+									<img id="img_article" th:src="@{'/resources/img/' + ${activity.image} + '.png'}" class="thumbnail" src="../resources/img/cover/fußballkids.png" width="302" height="180" alt="" />
+								</div>
+								<div class="col-xs-8">
+									<h3 th:text="${activity.name}">Fußball</h3>
+									<h4 th:text="#{category} + ': ' + ${activity.category}">Draußen</h4>
+								</div>
+							</div>
+						</div>
+						
 						</div>
 					</a>
 				</div>

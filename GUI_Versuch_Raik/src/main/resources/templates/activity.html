@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:include="navigation :: htmlhead">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" th:href="@{/resources/css/kPstyle.css}" />
+		<title th:text="${activity.name}">Akitvität xyz</title>
+	</head>
+<body class="background">
+	<header th:include="navigation :: header" ></header>
+		<nav th:include="navigation :: navigation" ></nav>
+		<div class="container">
+			<h1 th:text="${activity.name}">Activity xyz</h1>
+	<!--	<div>	
+				<p>Hier steht (hoffentlich) die grade ausgewählte Aktivität</p>
+					<div class="imagefloat">
+						<img id="img_article" th:src="@{'/resources/img/' + ${activity.image} + '.png'}" class="thumbnail" src="../resources/img/cover/fußballkids.png" width="302" height="180" alt="" />
+					</div>	
+				<p th:text="${activity.description}">Blah Blub</p>
+			</div> -->
+			
+			<div class="container-fluid">
+			
+				<div class="row">
+					<div class="col-xs-4">
+						<img id="img_article" th:src="@{'/resources/img/' + ${activity.image} + '.png'}" class="thumbnail" src="../resources/img/cover/fußballkids.png" width="302" height="180" alt="" />
+					</div>
+					
+					<div class="col-xs-8">
+						<b>Beschreibung</b>
+						<p th:text="${activity.description}">Blah Blub</p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-cs-12">
+						<form action="">
+							<button type="button" class="btn btn-primary">Bearbeiten</button>
+						</form>
+						<br></br>
+						<p>
+							<a th:href="@{'/activity/delete/' + ${activity.identifier}}" href="/activityCatalog" class="btn btn-primary">Löschen</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+</body>
+</html>

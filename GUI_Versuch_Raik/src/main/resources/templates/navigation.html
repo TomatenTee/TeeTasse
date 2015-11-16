@@ -4,18 +4,11 @@
 	<head th:fragment="htmlhead">
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" type="text/css" href="../resources/css/kPstyle.css" />
 		<link rel="stylesheet" type="text/css" href="../resources/bootstrap-3.3.5-dist/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../resources/css/kPstyle.css" />
  		<!--  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
-		<style type="text/css">
-			nav div div div select.nav.navbar-nav.selectpicker {
-				width:150px;
-				padding: 5px;
-				margin: 10px;
-			}
-		</style>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</head>
 
 
@@ -45,50 +38,66 @@
 						<a class="navbar-brand" th:href="@{/}" href="welcome.html">RefugeeApp</a>
 					</div>
 					<div class="collapse navbar-collapse" id="myNavbar">
-					<select class="nav navbar-nav selectpicker">
-  						<option value="Refugee" th:text="#{nav.area}">Umkreis</option>
-  						<option value="5km">5km</option>
-  						<option value="10km">10km</option>
-  						<option value="15km">15km</option>
-  						<option value="20km">20km</option>
-		      		</select>
 						<ul class="nav navbar-nav">
-							<li>
+							<li sec:authorize="isAuthenticated()" class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span th:text="${#authentication?.name}">Name</span><b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/user}" href="user.html" th:text="#{nav.user}">Benutzer</a></li>
+									<li sec:authorize="isAuthenticated()"><a th:href="@{/settings}" href="settings.html" th:text="#{nav.settings}">Einstellungen</a></li>
+									<li sec:authorize="isAuthenticated()"><a th:href="@{/messages}" href="messages.html" th:text="#{nav.messages}">Benachrichtigungen<span class="badge">5</span></a></li>
+								</ul>
+							</li>
+							<li sec:authorize="isAuthenticated()">
+								<form class="navbar-form navbar-left" role="search">
+									<input type="text" class="form-control" placeholder="Suche" />
+								</form>
+							</li>
+							<li sec:authorize="isAuthenticated()">
+								<form class="navbar-form navbar-left" role="region">
+									<input type="text" class="form-control" placeholder="Ort" />
+								</form>
+							</li>
+							<li sec:authorize="isAuthenticated()">
 								<form class="navbar-form navbar-left" role="find">
-									<button type="button" class="btn btn-info">
-										<span class="glyphicon glyphicon-refresh"></span> Aktualisieren
+									<button type="button" class="btn btn-primary">
+										<span class="glyphicon glyphicon-search"></span> Search
 									</button>
 								</form>
 							</li>
-							<li class="dropdown">
+
+							<li sec:authorize="isAuthenticated()" class="dropdown">
+
+
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span th:text="#{nav.goods}">Güter</span><b class="caret"></b></a>
+
+
+
 								<ul class="dropdown-menu">
-									<li><a th:href="@{/myGoods}" href="myGoods.html" th:text="#{nav.myGoods}">Meine Güter</a></li>
+									<li sec:authorize="isAuthenticated()"><a th:href="@{/myGoods}" href="myGoods.html" th:text="#{nav.myGoods}">Meine Güter</a></li>
 									<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/createGood}" href="createGood.html" th:text="#{nav.createGood}">Gut erstellen</a></li>
 									<li sec:authorize="hasRole('ROLE_SUPPORTER')"><a th:href="@{/createGood}" href="createGood.html" th:text="#{nav.createGood}">Gut erstellen</a></li>
 									<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/goodCatalog}" href="goodCatalog.html" th:text="#{nav.goodCatalog}">Gut auswählen</a></li>
 									<li sec:authorize="hasRole('ROLE_REFUGEE')"><a th:href="@{/goodCatalog}" href="goodCatalog.html" th:text="#{nav.goodCatalog}">Gut auswählen</a></li>
 								</ul>
 							</li>
-							<li class="dropdown">
+							<li sec:authorize="isAuthenticated()" class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span th:text="#{nav.activity}">Aktivitäten</span><b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li><a th:href="@{/myActivities}" href="myActivities" th:text="#{nav.myActivities}">Meine Aktivitäten</a></li>
-									<li><a th:href="@{/createActivity}" href="createActivity.html" th:text="#{nav.createActivity}">Aktivität erstellen</a></li>
-									<li><a th:href="@{/activityCatalog}" href="activityCatalog.html" th:text="#{nav.activityCatalog}">Aktivität auswählen</a></li>
-								</ul>
-							</li>							
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="glyphicon glyphicon-user"></b><span th:text="${' Hallo ' + #authentication?.name}">Name</span><b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/user}" href="user.html" th:text="#{nav.user}">Benutzer</a></li>
-									<li><a th:href="@{/settings}" href="settings.html" th:text="#{nav.settings}">Einstellungen</a></li>
-									<li><a th:href="@{/messages}" href="messages.html" th:text="#{nav.messages}">Benachrichtigungen<span class="badge">5</span></a></li>
+									<li sec:authorize="isAuthenticated()"><a th:href="@{/myActivities}" href="myActivities" th:text="#{nav.myActivities}">Meine Aktivitäten</a></li>
+									<li sec:authorize="isAuthenticated()"><a th:href="@{/createActivity}" href="createActivity.html" th:text="#{nav.createActivity}">Aktivität erstellen</a></li>
+									<li sec:authorize="isAuthenticated()"><a th:href="@{/activityCatalog}" href="activityCatalog.html" th:text="#{nav.activityCatalog}">Aktivität auswählen</a></li>
 								</ul>
 							</li>
-							<li class="loginlogout">
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li sec:authorize="!isAuthenticated()">
+								<a href="register.html" th:href="@{/register}"><b class="glyphicon glyphicon-user"></b><span th:text="' '+ #{nav.register}">Registrierung</span></a>
+							</li>
+							<li sec:authorize="!isAuthenticated()" class="loginlogout">
+								<a th:href="@{/login}" href="login.html"><b class="glyphicon glyphicon-log-in"></b><span  th:text="' '+ #{nav.login}">Login</span></a>
+							</li>
+
+							<li sec:authorize="isAuthenticated()" class="loginlogout">
 								<a href="login.html" th:href="@{/logout}"><b class="glyphicon glyphicon-log-out"></b><span th:text="' '+ #{nav.logout}">Logout</span></a>
 							</li>
 							<!--<li sec:authorize="isAuthenticated()" class="loginlogout">

@@ -5,16 +5,29 @@
 		<link rel="stylesheet" type="text/css" th:href="@{/resources/css/kPstyle.css}" />
 		<title th:text="#{home.createActivity}">Aktivität erstellen</title>
 	</head>
-<body class="background">
-	<header th:include="navigation :: header" ></header>
-	<nav th:include="navigation :: navigation" ></nav>
-	<div class="container">
-	<h1 th:text="#{createActivity.title}">Erstellung des Gutes</h1>
-		<p>Erstellen Sie hier ihre Aktivität!</p>
-	</div>
-</body>
-
 	
-
-
+	<body class="background">
+		<header th:include="navigation :: header" ></header>
+		<nav th:include="navigation :: navigation" ></nav>
+		<div class="container">
+			<h1 th:text="#{createActivity.title}">Erstellung des Gutes</h1>
+			<p>Erstellen Sie hier ihre Aktivität!</p>
+		</div>
+		
+		<div class="salespoint">
+			<form action="/createActivityNew" th:object="${activityForm}">
+				<fieldset>
+					<input class="center-block form-control" id="name" th:field="*{name}" type="text" name="name" th:placeholder="#{createActivity.name}" />
+					<br></br>
+					<input class="center-block form-control" id="image" th:field="*{image}" type="text" name="image" th:placeholder="#{createActivity.image}" />
+					<br></br>
+					<input class="center-block form-control" id="description" th:field="*{description}" type="text" name="description" th:placeholder="#{createActivity.description}" />
+					<br></br>
+					<input class="center-block form-control" id="category" th:field="*{category}" type="text" name="category" th:paceholde="#{createActivity.category}" />
+					<br></br>
+					<button type="submit" class="btn btn-primary" value="Create Activity"><b th:text="#{createActivity.submit}"></b></button>
+				</fieldset>
+			</form>
+		</div>
+	</body>
 </html>
