@@ -14,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import refugeeApp.model.Activity;
 import refugeeApp.model.Activity.ActivityType;
@@ -41,7 +42,7 @@ public class CreateControllerActivity extends ActivityForm {
 		return "createActivity";
 	}
 	
-	@RequestMapping("/createActivityNew")
+	@RequestMapping(value = "/createActivityNew", method=RequestMethod.POST)
 	public String createActivityNew (@ModelAttribute("activityForm") @Valid ActivityForm activityForm, BindingResult result){
 		
 		activityCatalog.save(new Activity(activityForm.getName(),activityForm.getImage(),activityForm.getDescription(), Money.of(14.99, EURO),activityForm.getCategory(), ActivityType.Activity));

@@ -33,9 +33,29 @@
 				
 				<div class="row">
 					<div class="col-cs-12">
-						<form action="">
-							<button type="button" class="btn btn-primary">Bearbeiten</button>
-						</form>
+							<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapse1">Bearbeiten</button>
+							<div id="collapse1" class="collapse">
+								<br></br>
+								<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapsename"><b th:text="#{activity.btnchangename}">Name Ändern</b></button><br></br>
+									<div id="collapsename" class="collapse">
+										<form action="/changeName" th:object="${activityForm}">
+											<fieldset>
+												<input class="center-block form-control" id="name" th:field="*{name}" type="text" name="name" th:placeholder="${activity.name}" required="required" />
+												<button type="submit" class="btn btn-default" value="Change Name"><b th:text="#{activity.submit}"></b></button>
+											</fieldset>
+										</form>	
+									</div>
+								<br></br>
+								<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapsedescription"><b th:text="#{activity.btnchangedescription}">Beschreibung Ändern</b></button>
+									<div id="collapsedescription" class="collapse">
+										<form action="/changeDescription" th:object="${activityForm}">
+											<fieldset>
+												<input class="center-block form-control" id="description" th:field="*{description}" type="text" name="description" th:placeholder="${activity.description}" required="required" />
+												<button type="submit" class="btn btn-default" value="change Description"><b th:text="#{activity.submit}"></b></button>
+											</fieldset>
+										</form>	
+									</div>
+							</div>
 						<br></br>
 						<p>
 							<a th:href="@{'/activity/delete/' + ${activity.identifier}}" href="/activityCatalog" class="btn btn-primary">Löschen</a>

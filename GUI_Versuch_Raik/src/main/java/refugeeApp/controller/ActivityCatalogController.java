@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import refugeeApp.model.Activity;
 import refugeeApp.model.Activity.ActivityType;
+import refugeeApp.model.validation.ActivityForm;
 import refugeeApp.model.ActivityCatalog;
 
 @Controller
@@ -33,9 +34,10 @@ public class ActivityCatalogController {
 	}
 	
 	@RequestMapping("/activity/{pid}")
-	public String activity(@PathVariable("pid") Activity activity, Model model) {
+	public String activity(@PathVariable("pid") Activity activity, Model model, ModelMap modelmap) {
 		
 		model.addAttribute("activity", activity);
+		modelmap.addAttribute("activityForm", new ActivityForm());
 		
 		return "activity";
 	}
@@ -44,8 +46,7 @@ public class ActivityCatalogController {
 	public String activitydelete(@PathVariable("pid") Activity activity, Model model) {
 		
 		activityCatalog.delete(activity.getId());
-		
-		
+	
 		return "redirect:/activityCatalog";
 	}
 	
