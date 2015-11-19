@@ -1,10 +1,16 @@
 package refugeeApp.model.validation;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class ActivityForm {
 
 	private String name;
+	@NotEmpty(message = "{ActivityForm.name.NotEmpty}")
+	
 	private String image;
 	private String description;
+	@NotEmpty(message = "{ActivityForm.description.NotEmpty}")
+	
 	private String category;
 	
 	public String getName() {

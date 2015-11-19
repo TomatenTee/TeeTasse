@@ -15,9 +15,9 @@
 		</div>
 		
 		<div class="salespoint">
-			<form action="/createActivityNew" th:object="${activityForm}">
+			<form action="/createActivityNew" th:object="${activityForm}" method="post">
 				<fieldset>
-					<input class="center-block form-control" id="name" th:field="*{name}" type="text" name="name" th:placeholder="#{createActivity.name}" />
+					<input class="center-block form-control" id="name" th:field="*{name}" type="text" name="name" th:placeholder="#{createActivity.name}" autofocus="autofocus" required="required" />
 					<br></br>
 					<input class="center-block form-control" id="image" th:field="*{image}" type="text" name="image" th:placeholder="#{createActivity.image}" />
 					<br></br>
